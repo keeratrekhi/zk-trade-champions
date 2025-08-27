@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { DollarSign, TrendingUp, Calendar, Expand, ArrowLeft } from "lucide-react";
+import { DollarSign, TrendingUp, Calendar, Expand, ArrowLeft, Briefcase, Receipt, Target } from "lucide-react";
+import { Link } from "react-router-dom";
 import CommodityList from "./CommodityList";
 import PositionsList from "./PositionsList";
 import MarketNews from "./MarketNews";
@@ -42,7 +43,25 @@ const TradingDashboard = ({
             Back to Menu
           </Button>
           
-          <div className="flex space-x-4">
+          <div className="flex space-x-2">
+            <Link to="/portfolio">
+              <Button variant="outline" size="sm">
+                <Briefcase className="mr-2 h-4 w-4" />
+                Portfolio
+              </Button>
+            </Link>
+            <Link to="/funds">
+              <Button variant="outline" size="sm">
+                <Target className="mr-2 h-4 w-4" />
+                Funds
+              </Button>
+            </Link>
+            <Link to="/transactions">
+              <Button variant="outline" size="sm">
+                <Receipt className="mr-2 h-4 w-4" />
+                Transactions
+              </Button>
+            </Link>
             <Button 
               onClick={onNextYear}
               variant="game"
